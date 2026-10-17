@@ -1,0 +1,49 @@
+{
+  "model_type": "Isolation Forest",
+  "contamination_parameter": 0.035,
+  "features_used": [
+    "Air temperature [K]",
+    "Process temperature [K]",
+    "Rotational speed [rpm]",
+    "Torque [Nm]",
+    "Tool wear [min]"
+  ],
+  "feature_baseline_stats": {
+    "Air temperature [K]": {
+      "mean": 300.005,
+      "std": 1.997
+    },
+    "Process temperature [K]": {
+      "mean": 310.006,
+      "std": 1.479
+    },
+    "Rotational speed [rpm]": {
+      "mean": 1539.357,
+      "std": 180.972
+    },
+    "Torque [Nm]": {
+      "mean": 40.003,
+      "std": 10.019
+    },
+    "Tool wear [min]": {
+      "mean": 107.685,
+      "std": 63.608
+    }
+  },
+  "test_evaluation_vs_failure_labels": {
+    "precision_vs_failure": 0.1077,
+    "recall_vs_failure": 0.1029,
+    "f1_vs_failure": 0.1053,
+    "confusion_matrix": {
+      "true_negatives": 1874,
+      "false_positives": 58,
+      "false_negatives": 61,
+      "true_positives": 7
+    },
+    "interpretation_note": "Ground-truth failure labels serve as an imperfect reference for unsupervised anomaly detection. An unusual operating point (statistical outlier) is not necessarily a mechanical breakdown, and certain failures (such as gradual tool wear) can occur within standard operating envelopes."
+  },
+  "score_interpretation": {
+    "decision_function_threshold": 0.0,
+    "rule": "Score < 0 indicates atypical / anomalous operating condition; Score >= 0 indicates normal envelope."
+  }
+}

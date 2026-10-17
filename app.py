@@ -37,37 +37,69 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Custom Styling for clean, restrained engineering UI
+# Custom Styling for clean, restrained engineering UI with accessible contrast
 st.markdown(
     """
     <style>
+    /* Metric Cards on Overview Page - dark elevated background with red accent */
     .metric-card {
-        background-color: #f8f9fa;
+        background-color: #1a1f2c;
+        border: 1px solid #2e3648;
+        border-left: 4px solid #ef4444;
         border-radius: 8px;
-        padding: 16px;
-        border-left: 4px solid #1f77b4;
+        padding: 16px 18px;
         margin-bottom: 12px;
     }
+    .metric-card h4 {
+        color: #ffffff !important;
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+        font-weight: 600;
+    }
+    .metric-card p {
+        color: #cbd5e1 !important;
+        margin-bottom: 0;
+        font-size: 0.92rem;
+        line-height: 1.55;
+    }
+    .metric-card b {
+        color: #ffffff !important;
+    }
+
+    /* Status indicators with high contrast in dark theme */
     .status-normal {
-        color: #2ca02c;
+        color: #22c55e !important;
         font-weight: bold;
     }
     .status-warning {
-        color: #ff7f0e;
+        color: #f59e0b !important;
         font-weight: bold;
     }
     .status-danger {
-        color: #d62728;
+        color: #ef4444 !important;
         font-weight: bold;
     }
+
+    /* Disclaimer / Warning Box - preserves warning styling with readable dark text */
     .disclaimer-box {
-        background-color: #fff8e1;
-        border-left: 4px solid #ffb300;
-        padding: 12px;
-        border-radius: 4px;
+        background-color: #fef3c7;
+        border: 1px solid #fde68a;
+        border-left: 4px solid #f59e0b;
+        color: #1f2937 !important;
+        padding: 12px 14px;
+        border-radius: 6px;
         font-size: 0.9rem;
+        line-height: 1.5;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+    .disclaimer-box b {
+        color: #111827 !important;
+        font-weight: 700;
+    }
+    .disclaimer-box i {
+        color: #1f2937 !important;
     }
     </style>
     """,
@@ -581,7 +613,8 @@ def render_model_evaluation():
         st.subheader("Confusion Matrix Comparison")
         col1, col2 = st.columns(2)
 
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4.2))
+        fig.patch.set_facecolor("#1a1f2c")
 
         cm_lr = models["logistic_regression"]["confusion_matrix"]
         cm_rf = models["random_forest"]["confusion_matrix"]
@@ -589,28 +622,37 @@ def render_model_evaluation():
         mat_lr = np.array([[cm_lr["true_negatives"], cm_lr["false_positives"]], [cm_lr["false_negatives"], cm_lr["true_positives"]]])
         mat_rf = np.array([[cm_rf["true_negatives"], cm_rf["false_positives"]], [cm_rf["false_negatives"], cm_rf["true_positives"]]])
 
-        cax1 = ax1.matshow(mat_lr, cmap=plt.cm.Blues, alpha=0.7)
+        cax1 = ax1.matshow(mat_lr, cmap=plt.cm.Blues, alpha=0.85)
+        thresh_lr = mat_lr.max() / 2.0
         for i in range(2):
             for j in range(2):
-                ax1.text(j, i, str(mat_lr[i, j]), va="center", ha="center", fontsize=12, fontweight="bold")
-        ax1.set_title("Logistic Regression", pad=15)
-        ax1.set_xlabel("Predicted Label")
-        ax1.set_ylabel("True Label")
+                val = mat_lr[i, j]
+                cell_color = "white" if val > thresh_lr else "#0f172a"
+                ax1.text(j, i, str(val), va="center", ha="center", fontsize=12, fontweight="bold", color=cell_color)
+        ax1.set_title("Logistic Regression", pad=15, color="#ffffff", fontsize=12, fontweight="bold")
+        ax1.set_xlabel("Predicted Label", color="#e2e8f0", fontsize=10)
+        ax1.set_ylabel("True Label", color="#e2e8f0", fontsize=10)
         ax1.set_xticks([0, 1])
         ax1.set_yticks([0, 1])
-        ax1.set_xticklabels(["Normal (0)", "Failure (1)"])
-        ax1.set_yticklabels(["Normal (0)", "Failure (1)"])
+        ax1.set_xticklabels(["Normal (0)", "Failure (1)"], color="#cbd5e1")
+        ax1.set_yticklabels(["Normal (0)", "Failure (1)"], color="#cbd5e1")
+        ax1.set_facecolor("#1a1f2c")
 
-        cax2 = ax2.matshow(mat_rf, cmap=plt.cm.Greens, alpha=0.7)
+        cax2 = ax2.matshow(mat_rf, cmap=plt.cm.Greens, alpha=0.85)
+        thresh_rf = mat_rf.max() / 2.0
         for i in range(2):
             for j in range(2):
-                ax2.text(j, i, str(mat_rf[i, j]), va="center", ha="center", fontsize=12, fontweight="bold")
-        ax2.set_title("Random Forest", pad=15)
-        ax2.set_xlabel("Predicted Label")
+                val = mat_rf[i, j]
+                cell_color = "white" if val > thresh_rf else "#0f172a"
+                ax2.text(j, i, str(val), va="center", ha="center", fontsize=12, fontweight="bold", color=cell_color)
+        ax2.set_title("Random Forest", pad=15, color="#ffffff", fontsize=12, fontweight="bold")
+        ax2.set_xlabel("Predicted Label", color="#e2e8f0", fontsize=10)
+        ax2.set_ylabel("True Label", color="#e2e8f0", fontsize=10)
         ax2.set_xticks([0, 1])
         ax2.set_yticks([0, 1])
-        ax2.set_xticklabels(["Normal (0)", "Failure (1)"])
-        ax2.set_yticklabels(["Normal (0)", "Failure (1)"])
+        ax2.set_xticklabels(["Normal (0)", "Failure (1)"], color="#cbd5e1")
+        ax2.set_yticklabels(["Normal (0)", "Failure (1)"], color="#cbd5e1")
+        ax2.set_facecolor("#1a1f2c")
 
         plt.tight_layout()
         st.pyplot(fig)

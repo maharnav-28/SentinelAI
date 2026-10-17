@@ -1,5 +1,8 @@
-# Standard Operating Procedure 03: Spindle Power & Overstrain Failure Prevention
-**Document ID:** SOP-MNT-003  
+> **[NOTICE: ILLUSTRATIVE REFERENCE DOCUMENT]**  
+> *This document is an illustrative technical procedure formulated for demonstration and educational benchmarking with the synthetic UCI AI4I 2020 Predictive Maintenance dataset (Matzka, 2020). It incorporates realistic mechanical cutting power formulas, but is NOT an official spindle motor OEM manual. Do not use for physical repairs on live factory hardware.*
+
+# Illustrative SOP 03: Spindle Power & Overstrain Failure Prevention
+**Document ID:** SOP-MNT-003 (Illustrative)  
 **Target Mechanism:** Power Failure (PWF) & Overstrain Failure (OSF)  
 **Applicability:** Spindle Drives, Drive Belts, and Heavy Machining Cycles
 

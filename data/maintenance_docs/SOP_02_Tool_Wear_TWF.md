@@ -1,5 +1,8 @@
-# Standard Operating Procedure 02: Cutting Tool Wear & Replacement Criteria
-**Document ID:** SOP-MNT-002  
+> **[NOTICE: ILLUSTRATIVE REFERENCE DOCUMENT]**  
+> *This document is an illustrative technical procedure formulated for demonstration and educational benchmarking with the synthetic UCI AI4I 2020 Predictive Maintenance dataset (Matzka, 2020). It incorporates realistic tool wear progression limits, but is NOT an official cutting tool OEM manual. Do not use for physical repairs on live factory hardware.*
+
+# Illustrative SOP 02: Cutting Tool Wear & Replacement Criteria
+**Document ID:** SOP-MNT-002 (Illustrative)  
 **Target Mechanism:** Tool Wear Failure (TWF) & Cutting Insert Degradation  
 **Applicability:** Milling Cutters, Face Mills, and End Mills (Insert Grades L, M, H)
 

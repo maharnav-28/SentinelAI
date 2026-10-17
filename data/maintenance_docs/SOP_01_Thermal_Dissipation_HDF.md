@@ -1,5 +1,8 @@
-# Standard Operating Procedure 01: Heat Dissipation & Thermal Management
-**Document ID:** SOP-MNT-001  
+> **[NOTICE: ILLUSTRATIVE REFERENCE DOCUMENT]**  
+> *This document is an illustrative technical procedure formulated for demonstration and educational benchmarking with the synthetic UCI AI4I 2020 Predictive Maintenance dataset (Matzka, 2020). It incorporates realistic thermodynamic and machining principles, but is NOT an official OEM manufacturer manual or certified safety standard. Do not use for physical repairs on live factory hardware.*
+
+# Illustrative SOP 01: Heat Dissipation & Thermal Management
+**Document ID:** SOP-MNT-001 (Illustrative)  
 **Target Mechanism:** Heat Dissipation Failure (HDF) & Process Overheating  
 **Applicability:** CNC Milling and Turning Centers (Types L, M, H)
 

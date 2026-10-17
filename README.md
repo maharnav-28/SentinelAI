@@ -149,11 +149,15 @@ Built using **Isolation Forest** on the continuous numerical telemetry:
 
 ## RAG Maintenance Assistant & Fallback
 
-The maintenance assistant provides traceable technical advice grounded in four comprehensive Standard Operating Procedures located in `data/maintenance_docs/`:
-1. `SOP_01_Thermal_Dissipation_HDF.md`: Heat dissipation threshold ($\Delta T < 8.6\text{ K}$, speed $< 1380\text{ rpm}$), convective airflow, and fan cleaning.
-2. `SOP_02_Tool_Wear_TWF.md`: Tool wear limits (200 min for L, 220 min for M, 240 min for H), 180 min inspection, and insert replacement.
-3. `SOP_03_Spindle_Power_and_Torque_PWF.md`: Mechanical power formula $P = \frac{2\pi N \tau}{60}$, power cutoff limits (3.5 kW – 9 kW), and overstrain product ($\tau \cdot t$).
-4. `SOP_04_Rotational_Speed_and_Bearings.md`: Speed limits (1,200 – 2,800 rpm), ISO VG 32 grease re-lubrication (2.0 cm³), vibration (< 1.8 mm/s RMS), and runout (< 5 µm).
+The maintenance assistant provides technical advice grounded in four illustrative Standard Operating Procedures located in `data/maintenance_docs/`. 
+
+> [!NOTE]
+> **Document Provenance & Traceability:** These SOPs are illustrative engineering documents formulated directly from the empirical failure criteria in the published UCI AI4I 2020 study (Matzka, 2020) and standard machining handbooks. They are explicitly marked as illustrative reference examples and should not be used as official OEM procedures for physical machine repairs.
+
+1. `SOP_01_Thermal_Dissipation_HDF.md`: Illustrative procedure for heat dissipation threshold ($\Delta T < 8.6\text{ K}$, speed $< 1380\text{ rpm}$), convective airflow, and fan cleaning.
+2. `SOP_02_Tool_Wear_TWF.md`: Illustrative procedure for tool wear limits (200 min for L, 220 min for M, 240 min for H), 180 min inspection, and insert replacement.
+3. `SOP_03_Spindle_Power_and_Torque_PWF.md`: Illustrative procedure for mechanical power formula $P = \frac{2\pi N \tau}{60}$, power cutoff limits (3.5 kW – 9 kW), and overstrain product ($\tau \cdot t$).
+4. `SOP_04_Rotational_Speed_and_Bearings.md`: Illustrative procedure for speed limits (1,200 – 2,800 rpm), ISO VG 32 grease re-lubrication (2.0 cm³), vibration (< 1.8 mm/s RMS), and runout (< 5 µm).
 
 ### Transparent Vector Search
 - **Embeddings:** `sentence-transformers/all-MiniLM-L6-v2` produces 384-dimensional dense vectors.

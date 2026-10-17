@@ -1,5 +1,8 @@
-# Standard Operating Procedure 04: Spindle Bearings, Lubrication & Speed Limits
-**Document ID:** SOP-MNT-004  
+> **[NOTICE: ILLUSTRATIVE REFERENCE DOCUMENT]**  
+> *This document is an illustrative technical procedure formulated for demonstration and educational benchmarking with the synthetic UCI AI4I 2020 Predictive Maintenance dataset (Matzka, 2020). It incorporates realistic lubrication intervals and vibration boundaries, but is NOT an official spindle bearing OEM manual. Do not use for physical repairs on live factory hardware.*
+
+# Illustrative SOP 04: Spindle Bearings, Lubrication & Speed Limits
+**Document ID:** SOP-MNT-004 (Illustrative)  
 **Target Mechanism:** Bearing Degradation, Speed Fluctuations & Random Failure (RNF) Mitigation  
 **Applicability:** Main Spindle Assemblies, Angular Contact Ceramic/Steel Bearings
 

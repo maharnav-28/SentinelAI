@@ -2,112 +2,112 @@
   {
     "chunk_id": "SOP_01_Thermal_Dissipation_HDF_0",
     "doc_name": "SOP_01_Thermal_Dissipation_HDF.md",
-    "doc_title": "Standard Operating Procedure 01: Heat Dissipation & Thermal Management",
+    "doc_title": "Illustrative SOP 01: Heat Dissipation & Thermal Management",
     "section": "Section 0",
-    "text": "# Standard Operating Procedure 01: Heat Dissipation & Thermal Management\n**Document ID:** SOP-MNT-001  \n**Target Mechanism:** Heat Dissipation Failure (HDF) & Process Overheating  \n**Applicability:** CNC Milling and Turning Centers (Types L, M, H)\n\n---"
+    "text": "> **[NOTICE: ILLUSTRATIVE REFERENCE DOCUMENT]**  \n> *This document is an illustrative technical procedure formulated for demonstration and educational benchmarking with the synthetic UCI AI4I 2020 Predictive Maintenance dataset (Matzka, 2020). It incorporates realistic thermodynamic and machining principles, but is NOT an official OEM manufacturer manual or certified safety standard. Do not use for physical repairs on live factory hardware.*\n\n# Illustrative SOP 01: Heat Dissipation & Thermal Management\n**Document ID:** SOP-MNT-001 (Illustrative)  \n**Target Mechanism:** Heat Dissipation Failure (HDF) & Process Overheating  \n**Applicability:** CNC Milling and Turning Centers (Types L, M, H)\n\n---"
   },
   {
     "chunk_id": "SOP_01_Thermal_Dissipation_HDF_1",
     "doc_name": "SOP_01_Thermal_Dissipation_HDF.md",
-    "doc_title": "Standard Operating Procedure 01: Heat Dissipation & Thermal Management",
+    "doc_title": "Illustrative SOP 01: Heat Dissipation & Thermal Management",
     "section": "1. Physical Principle & Failure Mechanism",
     "text": "## 1. Physical Principle & Failure Mechanism\nIn industrial milling equipment, Heat Dissipation Failure (HDF) occurs when cutting zone heat generation exceeds the convective cooling capacity of the machine assembly. \n\nFrom empirical thermodynamics and empirical data in machine testing:\n- **Critical Threshold:** A heat dissipation alert is triggered when the temperature differential between Process Temperature ($T_{\\text{process}}$) and Ambient Air Temperature ($T_{\\text{air}}$) falls below **8.6 Kelvin** ($\\Delta T < 8.6\\text{ K}$) simultaneously with a Spindle Rotational Speed under **1,380 rpm**.\n- **Root Cause:** At lower rotational velocities, the spindle-mounted cooling impeller produces reduced forced air draft. If cutting fluid is simultaneously starved or thermal buildup occurs in the workpiece, the heat gradient collapses, causing localized thermal expansion and bearing seizure."
   },
   {
     "chunk_id": "SOP_01_Thermal_Dissipation_HDF_2",
     "doc_name": "SOP_01_Thermal_Dissipation_HDF.md",
-    "doc_title": "Standard Operating Procedure 01: Heat Dissipation & Thermal Management",
+    "doc_title": "Illustrative SOP 01: Heat Dissipation & Thermal Management",
     "section": "2. Preventive Inspection Routine",
     "text": "## 2. Preventive Inspection Routine\n1. **Cooling Grille & Filter Inspection (Weekly):**\n   - Clean the motor fan shroud and external heatsink fins using compressed dry air (< 2 bar).\n   - Ensure the ambient intake louvers are free of chips, oil mist, and dust accumulations.\n2. **Ambient Ventilation Verification:**\n   - Confirm shop-floor ambient air temperature around the machine remains below 305 Kelvin (~32\u00b0C).\n   - Verify minimum 1-meter clearance around the motor housing for unobstructed airflow.\n3. **Sensor Calibration:**\n   - Calibrate the process zone thermocouple and ambient RTD sensors semi-annually. Discrepancies exceeding $\\pm 0.5\\text{ K}$ must be corrected."
   },
   {
     "chunk_id": "SOP_01_Thermal_Dissipation_HDF_3",
     "doc_name": "SOP_01_Thermal_Dissipation_HDF.md",
-    "doc_title": "Standard Operating Procedure 01: Heat Dissipation & Thermal Management",
+    "doc_title": "Illustrative SOP 01: Heat Dissipation & Thermal Management",
     "section": "3. Corrective Maintenance Actions",
     "text": "## 3. Corrective Maintenance Actions\n- **Immediate Response:** If $\\Delta T < 8.6\\text{ K}$ and speed is low, throttle down feed rate immediately. Do not abruptly quench spindle with cold liquid, as thermal shock can crack ceramic spindle bearings.\n- **Airflow Restoral:** Check spindle forced-air ventilation blower motor. Verify 24V DC auxiliary blower fan operation.\n- **Coolant Delivery:** Inspect flood coolant nozzles for blockage; verify coolant flow rate is at least 15 L/min."
   },
   {
     "chunk_id": "SOP_02_Tool_Wear_TWF_0",
     "doc_name": "SOP_02_Tool_Wear_TWF.md",
-    "doc_title": "Standard Operating Procedure 02: Cutting Tool Wear & Replacement Criteria",
+    "doc_title": "Illustrative SOP 02: Cutting Tool Wear & Replacement Criteria",
     "section": "Section 0",
-    "text": "# Standard Operating Procedure 02: Cutting Tool Wear & Replacement Criteria\n**Document ID:** SOP-MNT-002  \n**Target Mechanism:** Tool Wear Failure (TWF) & Cutting Insert Degradation  \n**Applicability:** Milling Cutters, Face Mills, and End Mills (Insert Grades L, M, H)\n\n---"
+    "text": "> **[NOTICE: ILLUSTRATIVE REFERENCE DOCUMENT]**  \n> *This document is an illustrative technical procedure formulated for demonstration and educational benchmarking with the synthetic UCI AI4I 2020 Predictive Maintenance dataset (Matzka, 2020). It incorporates realistic tool wear progression limits, but is NOT an official cutting tool OEM manual. Do not use for physical repairs on live factory hardware.*\n\n# Illustrative SOP 02: Cutting Tool Wear & Replacement Criteria\n**Document ID:** SOP-MNT-002 (Illustrative)  \n**Target Mechanism:** Tool Wear Failure (TWF) & Cutting Insert Degradation  \n**Applicability:** Milling Cutters, Face Mills, and End Mills (Insert Grades L, M, H)\n\n---"
   },
   {
     "chunk_id": "SOP_02_Tool_Wear_TWF_1",
     "doc_name": "SOP_02_Tool_Wear_TWF.md",
-    "doc_title": "Standard Operating Procedure 02: Cutting Tool Wear & Replacement Criteria",
+    "doc_title": "Illustrative SOP 02: Cutting Tool Wear & Replacement Criteria",
     "section": "1. Tool Wear Progression & Limits",
     "text": "## 1. Tool Wear Progression & Limits\nContinuous cutting produces progressive flank wear ($V_B$) and crater wear on carbide inserts due to friction, high localized shear stress, and thermal cycling.\n\n- **Wear Limit Criteria:**\n  - For standard Low-variant (L) tools: Maximum continuous service limit is **200 minutes** of accumulated cut time.\n  - For Medium-variant (M) tools: Limit is **220 minutes**.\n  - For High-variant (H) premium coated carbide tools: Limit is **240 minutes**.\n- **Critical Threshold:** Any tool exceeding **200 minutes** without microscopic inspection is operating in the accelerated catastrophic wear phase.\n- **Physical Symptom:** Exceeding tool wear limits causes burr formation, severe surface roughness ($R_a > 3.2\\ \\mu\\text{m}$), increased spindle torque, and eventual insert tip fracture."
   },
   {
     "chunk_id": "SOP_02_Tool_Wear_TWF_2",
     "doc_name": "SOP_02_Tool_Wear_TWF.md",
-    "doc_title": "Standard Operating Procedure 02: Cutting Tool Wear & Replacement Criteria",
+    "doc_title": "Illustrative SOP 02: Cutting Tool Wear & Replacement Criteria",
     "section": "2. Mandatory Inspection Steps (At 180 Minutes)",
     "text": "## 2. Mandatory Inspection Steps (At 180 Minutes)\n1. Stop the cycle at a safe retract point.\n2. Engage Lockout/Tagout (LOTO) on the spindle drive.\n3. Use a 10x illuminated optical loupe or shop microscope to inspect cutting edges:\n   - Measure flank wear land width ($V_B$). If $V_B \\ge 0.30\\text{ mm}$, index the insert.\n   - Inspect for edge chipping, micro-flaking, or built-up edge (BUE).\n   - Check tool holder clamping pocket for fretting corrosion or chip jamming."
   },
   {
     "chunk_id": "SOP_02_Tool_Wear_TWF_3",
     "doc_name": "SOP_02_Tool_Wear_TWF.md",
-    "doc_title": "Standard Operating Procedure 02: Cutting Tool Wear & Replacement Criteria",
+    "doc_title": "Illustrative SOP 02: Cutting Tool Wear & Replacement Criteria",
     "section": "3. Tool Replacement & Indexing Protocol",
     "text": "## 3. Tool Replacement & Indexing Protocol\n1. Completely halt spindle and wait for stationary zero-speed confirmation.\n2. Clean chips from pocket with a soft brass brush.\n3. Loosen Torx clamping screw using a calibrated torque wrench (typically 2.5 to 3.0 Nm).\n4. Index to a fresh cutting edge or replace insert with genuine specification inserts.\n5. Apply anti-seize paste lightly to the clamping screw thread.\n6. Reset the CNC control software tool wear timer (`Tool wear [min] = 0`). Never resume production without resetting the register."
   },
   {
     "chunk_id": "SOP_03_Spindle_Power_and_Torque_PWF_0",
     "doc_name": "SOP_03_Spindle_Power_and_Torque_PWF.md",
-    "doc_title": "Standard Operating Procedure 03: Spindle Power & Overstrain Failure Prevention",
+    "doc_title": "Illustrative SOP 03: Spindle Power & Overstrain Failure Prevention",
     "section": "Section 0",
-    "text": "# Standard Operating Procedure 03: Spindle Power & Overstrain Failure Prevention\n**Document ID:** SOP-MNT-003  \n**Target Mechanism:** Power Failure (PWF) & Overstrain Failure (OSF)  \n**Applicability:** Spindle Drives, Drive Belts, and Heavy Machining Cycles\n\n---"
+    "text": "> **[NOTICE: ILLUSTRATIVE REFERENCE DOCUMENT]**  \n> *This document is an illustrative technical procedure formulated for demonstration and educational benchmarking with the synthetic UCI AI4I 2020 Predictive Maintenance dataset (Matzka, 2020). It incorporates realistic mechanical cutting power formulas, but is NOT an official spindle motor OEM manual. Do not use for physical repairs on live factory hardware.*\n\n# Illustrative SOP 03: Spindle Power & Overstrain Failure Prevention\n**Document ID:** SOP-MNT-003 (Illustrative)  \n**Target Mechanism:** Power Failure (PWF) & Overstrain Failure (OSF)  \n**Applicability:** Spindle Drives, Drive Belts, and Heavy Machining Cycles\n\n---"
   },
   {
     "chunk_id": "SOP_03_Spindle_Power_and_Torque_PWF_1",
     "doc_name": "SOP_03_Spindle_Power_and_Torque_PWF.md",
-    "doc_title": "Standard Operating Procedure 03: Spindle Power & Overstrain Failure Prevention",
+    "doc_title": "Illustrative SOP 03: Spindle Power & Overstrain Failure Prevention",
     "section": "1. Mechanical Principles of Spindle Power & Torque",
     "text": "## 1. Mechanical Principles of Spindle Power & Torque\nThe instantaneous mechanical cutting power $P$ delivered to the spindle is calculated from rotational speed $N$ (rpm) and torque $\\tau$ (Nm):\n$$P = \\frac{2 \\pi \\cdot N \\cdot \\tau}{60} \\text{ [Watts]}$$\n\n- **Power Failure (PWF) Criteria:**\n  - Occurs when mechanical cutting power falls outside the permissible envelope:\n    - Low power cutoff: $P < 3,500\\text{ W}$ under commanded cut (indicates drive slippage, stall, or tool disengagement).\n    - High power overload: $P > 9,000\\text{ W}$ (causes VFD over-current trip, motor winding breakdown, or drive belt shearing).\n- **Overstrain Failure (OSF) Criteria:**\n  - Caused by the combined interaction of dull tool wear and excessive cutting torque.\n  - The critical overstrain product ($OS = \\text{Tool wear [min]} \\times \\text{Torque [Nm]}$) must not exceed:\n    - **11,000 min\u00b7Nm** for Type L products.\n    - **12,000 min\u00b7Nm** for Type M products.\n    - **13,000 min\u00b7Nm** for Type H products.\n  - When this product is exceeded, mechanical stresses exceed the yield strength of the workpiece or cutter shank."
   },
   {
     "chunk_id": "SOP_03_Spindle_Power_and_Torque_PWF_2",
     "doc_name": "SOP_03_Spindle_Power_and_Torque_PWF.md",
-    "doc_title": "Standard Operating Procedure 03: Spindle Power & Overstrain Failure Prevention",
+    "doc_title": "Illustrative SOP 03: Spindle Power & Overstrain Failure Prevention",
     "section": "2. Prevention & Operational Checks",
     "text": "## 2. Prevention & Operational Checks\n1. **Feed Rate Optimization:**\n   - Avoid aggressive single-pass hogging cuts. Distribute deep pocketing into multi-pass roughing cycles.\n2. **Torque Monitoring:**\n   - If torque consistently exceeds 60 Nm during nominal operations, check for dull tooling, hard spots in raw stock, or inadequate chip evacuation.\n3. **Drive System Integrity:**\n   - Inspect synchronous timing belts every 500 operating hours. Check tension with a sonic belt tension meter (target deflection frequency 85 Hz \u00b1 5 Hz)."
   },
   {
     "chunk_id": "SOP_03_Spindle_Power_and_Torque_PWF_3",
     "doc_name": "SOP_03_Spindle_Power_and_Torque_PWF.md",
-    "doc_title": "Standard Operating Procedure 03: Spindle Power & Overstrain Failure Prevention",
+    "doc_title": "Illustrative SOP 03: Spindle Power & Overstrain Failure Prevention",
     "section": "3. Post-Trip Corrective Sequence",
     "text": "## 3. Post-Trip Corrective Sequence\n- **After VFD Overpower Trip:**\n  - Clear chips from the cutting zone.\n  - Verify spindle spins freely by hand in neutral/jog mode before re-engaging power.\n  - Check variable frequency drive inverter error logs for error codes (e.g., OC-1 Overcurrent, OL-2 Motor Overload).\n  - Reduce programmed depth of cut ($a_p$) by 25% if restarting on identical raw stock."
   },
   {
     "chunk_id": "SOP_04_Rotational_Speed_and_Bearings_0",
     "doc_name": "SOP_04_Rotational_Speed_and_Bearings.md",
-    "doc_title": "Standard Operating Procedure 04: Spindle Bearings, Lubrication & Speed Limits",
+    "doc_title": "Illustrative SOP 04: Spindle Bearings, Lubrication & Speed Limits",
     "section": "Section 0",
-    "text": "# Standard Operating Procedure 04: Spindle Bearings, Lubrication & Speed Limits\n**Document ID:** SOP-MNT-004  \n**Target Mechanism:** Bearing Degradation, Speed Fluctuations & Random Failure (RNF) Mitigation  \n**Applicability:** Main Spindle Assemblies, Angular Contact Ceramic/Steel Bearings\n\n---"
+    "text": "> **[NOTICE: ILLUSTRATIVE REFERENCE DOCUMENT]**  \n> *This document is an illustrative technical procedure formulated for demonstration and educational benchmarking with the synthetic UCI AI4I 2020 Predictive Maintenance dataset (Matzka, 2020). It incorporates realistic lubrication intervals and vibration boundaries, but is NOT an official spindle bearing OEM manual. Do not use for physical repairs on live factory hardware.*\n\n# Illustrative SOP 04: Spindle Bearings, Lubrication & Speed Limits\n**Document ID:** SOP-MNT-004 (Illustrative)  \n**Target Mechanism:** Bearing Degradation, Speed Fluctuations & Random Failure (RNF) Mitigation  \n**Applicability:** Main Spindle Assemblies, Angular Contact Ceramic/Steel Bearings\n\n---"
   },
   {
     "chunk_id": "SOP_04_Rotational_Speed_and_Bearings_1",
     "doc_name": "SOP_04_Rotational_Speed_and_Bearings.md",
-    "doc_title": "Standard Operating Procedure 04: Spindle Bearings, Lubrication & Speed Limits",
+    "doc_title": "Illustrative SOP 04: Spindle Bearings, Lubrication & Speed Limits",
     "section": "1. Operating Envelope & Speed Guidelines",
     "text": "## 1. Operating Envelope & Speed Guidelines\nHigh-precision machining spindles are rated for continuous service between **1,200 rpm and 2,800 rpm**.\n\n- **Under-speed Hazard:**\n  - Operating under high cutting load (< 1,200 rpm with Torque > 50 Nm) subjects electric motor stator windings to high I\u00b2R thermal dissipation while integral fan cooling capacity is minimal.\n- **Over-speed Hazard:**\n  - Exceeding 2,800 rpm without balanced tooling (ISO 1940 Grade G 2.5) induces excessive centrifugal force and dynamic bearing radial runout."
   },
   {
     "chunk_id": "SOP_04_Rotational_Speed_and_Bearings_2",
     "doc_name": "SOP_04_Rotational_Speed_and_Bearings.md",
-    "doc_title": "Standard Operating Procedure 04: Spindle Bearings, Lubrication & Speed Limits",
+    "doc_title": "Illustrative SOP 04: Spindle Bearings, Lubrication & Speed Limits",
     "section": "2. Spindle Bearing Lubrication Protocol",
     "text": "## 2. Spindle Bearing Lubrication Protocol\n1. **Lubricant Specification:**\n   - Use high-speed synthetic ester spindle grease (viscosity grade ISO VG 15 to VG 32).\n   - Never mix lithium-soap grease with polyurea-based high-speed grease.\n2. **Re-lubrication Interval:**\n   - Every **1,000 operating hours** or semi-annually.\n   - Exact volume control: Inject strictly 2.0 cm\u00b3 per bearing chamber.\n   - *Caution:* Over-greasing causes viscous churning, leading to rapid temperature escalation > 65\u00b0C and thermal expansion seizure.\n3. **Run-in Cycle after Re-greasing:**\n   - Run spindle at 500 rpm for 20 minutes.\n   - Increase by 500 rpm steps every 15 minutes up to maximum rated speed, monitoring bearing cap temperature."
   },
   {
     "chunk_id": "SOP_04_Rotational_Speed_and_Bearings_3",
     "doc_name": "SOP_04_Rotational_Speed_and_Bearings.md",
-    "doc_title": "Standard Operating Procedure 04: Spindle Bearings, Lubrication & Speed Limits",
+    "doc_title": "Illustrative SOP 04: Spindle Bearings, Lubrication & Speed Limits",
     "section": "3. Vibration & Runout Diagnostics",
     "text": "## 3. Vibration & Runout Diagnostics\n- **Vibration Limit:**\n  - Spindle housing peak-to-peak vibration velocity must remain below **1.8 mm/s RMS** in the 10 Hz to 1,000 Hz frequency range.\n- **Runout Limit:**\n  - Total radial runout measured inside the spindle taper with a 0.001 mm dial test indicator (DTI) must not exceed **0.005 mm (5 \u00b5m)**.\n- **Unexplained / Random Fluctuations (RNF):**\n  - If random torque or speed spikes occur without tool wear or thermal anomalies, verify ground cable bonding, electrical noise suppression on VFD cables, and encoder shield termination."
   }

@@ -135,6 +135,47 @@ def check_artifacts_ready() -> bool:
     return all(p.exists() for p in required)
 
 
+def rebuild_missing_artifacts() -> tuple[bool, str]:
+    """Rebuild missing models and vector store using the project's data and training pipelines."""
+    try:
+        from src.data_loader import (
+            download_uci_dataset,
+            load_raw_data,
+            prepare_features_and_target,
+            get_train_test_split,
+        )
+        from src.train_classifier import train_and_evaluate_all
+        from src.anomaly_detector import train_anomaly_detector
+        from src.rag import build_faiss_index
+        from src.utils import MAINTENANCE_DOCS_DIR
+
+        # 1. Dataset check / download
+        if not DATA_RAW_FILE.exists():
+            download_uci_dataset()
+
+        # 2. Classifier & Anomaly models
+        if (
+            not CLASSIFIER_PIPELINE_PATH.exists()
+            or not ANOMALY_DETECTOR_PATH.exists()
+            or not CLASSIFIER_METRICS_PATH.exists()
+            or not ANOMALY_METRICS_PATH.exists()
+        ):
+            df = load_raw_data(DATA_RAW_FILE)
+            X, y = prepare_features_and_target(df)
+            X_train, X_test, y_train, y_test = get_train_test_split(X, y, test_size=0.2, random_state=42)
+            train_and_evaluate_all(X_train, y_train, X_test, y_test)
+            train_anomaly_detector(X_train, X_test, y_test, contamination=0.035)
+
+        # 3. FAISS RAG index
+        if not FAISS_INDEX_PATH.exists() or not RAG_CHUNKS_PATH.exists():
+            build_faiss_index(MAINTENANCE_DOCS_DIR)
+
+        st.cache_resource.clear()
+        return True, "Artifacts successfully initialized."
+    except Exception as e:
+        return False, str(e)
+
+
 def render_sidebar():
     """Render navigation sidebar and quick telemetry presets."""
     st.sidebar.title("⚙️ SentinelAI")
@@ -741,15 +782,25 @@ def render_about():
 
 def main():
     if not check_artifacts_ready():
-        st.error(
-            "⚠️ **Model Artifacts Not Found!**\n\n"
-            "Please initialize the project by running the setup scripts in your terminal:\n"
-            "```bash\n"
-            "python scripts/download_data.py\n"
-            "python scripts/train_models.py\n"
-            "python scripts/build_rag_index.py\n"
-            "```"
+        st.warning("⚠️ **Required Model Artifacts Missing on Clean Environment**")
+        st.info(
+            "Some pre-trained model binaries or vector indices were not found in `artifacts/`. "
+            "You can initialize them automatically using the project's data and training pipelines below."
         )
+        if st.button("⚙️ Initialize & Build Artifacts Now", type="primary"):
+            with st.spinner("Downloading dataset, fitting models, and building vector index (~15s)..."):
+                success, msg = rebuild_missing_artifacts()
+                if success:
+                    st.success("Initialization complete! Reloading dashboard...")
+                    st.rerun()
+                else:
+                    st.error(f"Failed to auto-generate artifacts: {msg}")
+                    st.code(
+                        "Manual Setup Instructions:\n"
+                        "python scripts/download_data.py\n"
+                        "python scripts/train_models.py\n"
+                        "python scripts/build_rag_index.py"
+                    )
         return
 
     page, readings, preset_choice = render_sidebar()

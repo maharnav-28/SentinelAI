@@ -34,7 +34,5 @@ htmlcov/
 .cache/
 huggingface/
 
-# Generated data and model binaries (generated via scripts)
+# Raw downloaded dataset (auto-downloaded via scripts/download_data.py)
 data/raw/
-artifacts/*.joblib
-artifacts/*.bin
